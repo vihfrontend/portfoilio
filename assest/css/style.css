@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;700;900&display=swap");
 :root {
-  --background-color:#454545;
+  --dark-background-color:#454545;
   --title-colors:#FFA559;
   --btn-colors:#FF8C32;
   --title-two:#393646;
   --bg-opacity:#393647a4;
+  --white-background:rgb(245, 243, 243);
+  --white-opacyti:rgba(255, 255, 255, 0.37);
 }
 
 * {
@@ -27,10 +29,11 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--background-color);
+  background-color: var(--white-background);
   height: 50px;
   padding: 0 1.2em;
   position: fixed;
+  z-index: 999;
   width: 100vw;
 }
 
@@ -75,7 +78,7 @@ body {
   position: absolute;
   top: 50px;
   left: 0;
-  background-color: var(--background-color);
+  background-color: var(--white-background);
   width: 100%;
   list-style: none;
   gap: 20px;
@@ -103,15 +106,16 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: url("../img/background-portfolio.jpg"), linear-gradient(45deg, rgba(0, 0, 0, 0.479), rgba(0, 0, 0, 0.712));
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.418), rgba(0, 0, 0, 0.397)), url("../img/background-portfolio.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: bottom top;
   width: 100%;
   min-height: 100vh;
 }
 
 .main_hero_baner .text_baner {
-  background-color: var(--bg-opacity);
+  background-color: var(--white-opacyti);
   padding: 0.7em 1.2em;
   color: #e9dbd1;
   margin: 0 0.8em;
@@ -119,19 +123,51 @@ body {
 
 .main_hero_baner .text_baner h1 {
   font-size: clamp(1.8em, 6vw, 2em);
+  color: rgb(31, 30, 30);
+}
+
+.main_hero_baner .text_baner h2 {
+  color: var(--title-colors);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .main_hero_baner .btn_baner .btn_download {
-  background-color: var(--btn-colors);
+  background-color: transparent;
   padding: 0.8em 0.7em;
   border: none;
   border-radius: 2px;
   margin-top: 1.4em;
+  border: 1px solid var(--btn-colors);
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+.main_hero_baner .btn_baner .btn_download::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 100%;
+  position: absolute;
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: all 0.5s ease-in-out;
+}
+
+.main_hero_baner .btn_baner .btn_download:hover::after {
+  width: 100%;
+  background-color: var(--btn-colors);
 }
 
 .main_hero_baner .btn_baner .btn_download a {
-  color: var(--title-two);
+  color: white;
   font-size: 1.2em;
   text-transform: uppercase;
   font-weight: 500;
+  z-index: 2;
+  position: relative;
 }/*# sourceMappingURL=style.css.map */
