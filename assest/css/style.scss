@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;700;900&display=swap');
 
 :root{
-    --dark-background-color:#454545;
+    --dark-background-color:#333333;
     --title-colors:#FFA559;
     --text-colors:#FFA559;
     --btn-colors:#FF8C32;
-    --title-two:#393646;
-    --bg-opacity:#393647a4;
+    --title-two:#18171b;
+    --bg-opacity:#17161ba4;
 
     --white-background:rgb(245, 243, 243);
     --white-opacyti:rgba(255, 255, 255, 0.808);
@@ -33,19 +33,19 @@ a{
 }
 #nome{
     color: var(--text-colors);
-    text-transform: uppercase;
 }
 // fim css resiclaveis
 body{
     width: 100%;
     height: 100%;
+    background-color: var(--dark-background-color);
 }
 
 .main_header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--white-background);
+    background-color: var(--dark-background-color);
     height: 50px;
     padding: 0 1.2em;
     position: fixed;
@@ -97,7 +97,7 @@ body{
     position: absolute;
     top: 50px;
     left: 0;
-    background-color: var(--white-background);
+    background-color: var(--dark-background-color);
     width: 100%;
     list-style: none;
     gap: 20px;
@@ -125,7 +125,7 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background:linear-gradient(45deg,rgba(0, 0, 0, 0.418),rgba(0, 0, 0, 0.397)),url('../img/bg-mobile.jpg');
+    background:linear-gradient(45deg,rgba(0, 0, 0, 0.418),rgba(0, 0, 0, 0.397)),url('../img/background-portfolio.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom top;
@@ -133,7 +133,7 @@ body{
     min-height: 100vh;
 }
 .main_hero_baner .text_baner{
-    background-color: var(--white-opacyti);
+    background-color: var(--bg-opacity);
     padding: .70em 1.2em;
     color: #e9dbd1;
     margin: 0 .80em;
@@ -141,7 +141,7 @@ body{
 }
 .main_hero_baner .text_baner h1{
     font-size: clamp(1.3em,6vw,1.5em);
-    color: rgb(31, 30, 30);
+    color: rgb(255, 255, 255);
 }
 .main_hero_baner .text_baner h2{
     color: var(--text-colors);
@@ -194,12 +194,13 @@ body{
 }
 .main_content .about_content .text_content h3{
    text-transform: capitalize;
+   color: #ffffff;
 }
 .main_content .about_content .text_content p{
-   text-indent: 10px;
    margin-top: .85em;
    margin-bottom: .85em;
    line-height: 1.8;
+   color: #e9dbd1;
 }
 .main_content .skills_content{
     display: flex;
@@ -222,7 +223,7 @@ body{
 }
 .main_content .skills_content .cards_content .card_grid .text_grid{
     text-transform: uppercase;
-    background-color: white;
+    // background-color: white;
     color:var(--text-colors);
     padding: .45em .25em;
     font-size: clamp(.80em,6vw,.40em);
